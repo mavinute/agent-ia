@@ -1,8 +1,11 @@
 import Fastify from 'fastify';
+import { agenteRoutes } from './routes/agente';
 
 const app = Fastify({
     logger: true,
 });
+
+app.register(agenteRoutes)
 
 app.get('/', async (req, res) => {
     return res.send('Hello Word!')
